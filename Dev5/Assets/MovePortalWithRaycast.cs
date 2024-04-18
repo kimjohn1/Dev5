@@ -32,7 +32,8 @@ public class MovePortalWithRaycast : MonoBehaviour
         bool leftIsGrabPressed = leftGrabValue > 0.1f;
 
         //Toggle Portal Mode
-        if (leftIsTriggerPressed && leftIsGrabPressed)
+        //if (leftIsTriggerPressed && leftIsGrabPressed)
+        if (leftIsTriggerPressed)
         {
             portalToggle = !portalToggle;
             if (!portalToggle)
