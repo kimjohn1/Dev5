@@ -61,11 +61,12 @@ public class MovePortalWithRaycast : MonoBehaviour
                     isOnTable = false;
                     modifiedHitPoint.y = -(1 - objectToMove.transform.localScale.y);
                 }
-                
-                //Move both the exit portal and the entry portal to new locations
+
+                //Move both the exit portal and the entry portal to new locations, and both having the Player orientation
                 objectToMove.transform.position = modifiedHitPoint;
                 XROrigin xrOrigin = FindObjectOfType<XROrigin>();
-                fixedObject.transform.position = xrOrigin.transform.position;                
+                objectToMove.transform.rotation = xrOrigin.transform.rotation;
+                fixedObject.transform.position = xrOrigin.transform.position;
                 fixedObject.transform.rotation = xrOrigin.transform.rotation;
 
                 //Set the entry portal slightly away from the player
